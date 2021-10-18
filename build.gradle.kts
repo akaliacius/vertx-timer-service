@@ -5,6 +5,7 @@ plugins {
   java
   application
   id("com.github.johnrengelman.shadow") version "7.0.0"
+  id("io.spring.dependency-management") version "1.0.1.RELEASE"
 }
 
 group = "com.akaliacius.demos"
@@ -27,9 +28,19 @@ application {
   mainClass.set(launcherClassName)
 }
 
+dependencyManagement {
+  imports {
+    mavenBom("org.apache.logging.log4j:log4j-bom:2.14.1")
+  }
+}
+
 dependencies {
   implementation(platform("io.vertx:vertx-stack-depchain:$vertxVersion"))
   implementation("io.vertx:vertx-web")
+  implementation("org.apache.logging.log4j:log4j-api")
+  implementation("org.apache.logging.log4j:log4j-core")
+  implementation("org.apache.logging.log4j:log4j-slf4j-impl")
+  implementation("org.slf4j:slf4j-api:1.7.32")
   testImplementation("io.vertx:vertx-junit5")
   testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
 }
