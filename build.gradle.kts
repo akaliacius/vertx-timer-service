@@ -37,6 +37,10 @@ dependencyManagement {
 dependencies {
   implementation(platform("io.vertx:vertx-stack-depchain:$vertxVersion"))
   implementation("io.vertx:vertx-web")
+  implementation("io.vertx:vertx-web-client")
+  implementation("io.vertx:vertx-config")
+  implementation("io.vertx:vertx-config-yaml")
+  implementation("com.fasterxml.jackson.core:jackson-databind:2.13.0")
   implementation("org.apache.logging.log4j:log4j-api")
   implementation("org.apache.logging.log4j:log4j-core")
   implementation("org.apache.logging.log4j:log4j-slf4j-impl")

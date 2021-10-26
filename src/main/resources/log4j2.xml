@@ -6,7 +6,7 @@
     </Console>
   </Appenders>
   <Loggers>
-    <Logger name="com.andriusk.udemy" level="DEBUG" />
+    <Logger name="com.akaliacius.demos.vertx_timer_service" level="DEBUG" />
     <Root level="INFO">
       <AppenderRef ref="Console"/>
     </Root>
