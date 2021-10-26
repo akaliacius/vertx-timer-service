@@ -33,7 +33,7 @@ public class TimerHttpClient extends AbstractVerticle {
     var port = json.getInteger(PORT_KEY);
     vertx.setPeriodic(delaySeconds, id -> {
       sendTime(id, endpoint, port);
-      message.reply(new JsonObject().put(ENDPOINT_KEY, endpoint).put("id", id));
+      message.reply(new JsonObject().put(ENDPOINT_KEY, endpoint).put(ID_KEY, id));
     });
   }
 

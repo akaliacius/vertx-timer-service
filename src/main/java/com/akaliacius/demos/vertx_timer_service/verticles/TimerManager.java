@@ -101,7 +101,7 @@ public class TimerManager extends AbstractVerticle {
       if(reply.succeeded()){
         var replyJson = reply.result().body();
         logger.info("received response from {}: {}", TimerHttpClient.class.getSimpleName(), replyJson.encode());
-        timers.put(replyJson.getString("endpoint"), replyJson.getLong("id"));
+        timers.put(replyJson.getString(ENDPOINT_KEY), replyJson.getLong(ID_KEY));
         message.reply(replyJson);
       } else if(reply.failed()){
         logger.warn("failed response from {}", TimerHttpClient.class.getSimpleName());
