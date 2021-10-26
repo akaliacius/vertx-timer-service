@@ -4,11 +4,53 @@ image:https://img.shields.io/badge/vert.x-4.1.5-purple.svg[link="https://vertx.i
 
 This application was generated using http://start.vertx.io
 
+== Requirements
+image:https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/300px-Java_programming_language_logo.svg.png[Java,40]
+SDK 16
+
+== API endpoints
+List existing timers
+```
+GET [host]:[port]/timers
+```
+
+Create new timer
+```
+POST [host]:[port]/timers
+
+{
+    "endpoint":"http://somehost.com/accept",
+    "delay":5,
+    "port":8888
+}
+```
+
+Update existing timer
+```
+PUT [host]:[port]/timers
+
+{
+    "endpoint":"http://somehost.com/accept",
+    "delay":5,
+    "port":8888
+}
+```
+
+Delete existing timer
+```
+DELETE [host]:[port]/timers
+
+{
+    "endpoint":"http://somehost.com/accept"
+}
+```
+*delay* is number of seconds
+
 == Building
 
-To launch your tests:
+Export environment variable:
 ```
-./gradlew clean test
+export SERVER_PORT=[PORT]
 ```
 
 To package your application:
